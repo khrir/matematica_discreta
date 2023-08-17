@@ -19,3 +19,12 @@
 9. Escrever um programa para encontrar a solução única de três congruências usando o Teorema Chinês do Resto. (Lembre-se de verificar se os módulos são coprimos).
 
 10. Generalize o programa da questão anterior para funcionar com n congruências ao invés de somente 3, onde n será dado pelo usuário.
+
+11. Bom dia
+
+
+oi
+amigo
+
+
+
