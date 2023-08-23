@@ -1,4 +1,4 @@
-#include <stdio.h>;
+#include <stdio.h>
 
 void decompor_em_numeros_primos(int numero) 
 {
