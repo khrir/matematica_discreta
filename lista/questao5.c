@@ -1,28 +1,31 @@
 #include <stdio.h>
+/*
+Escolha os dois numeros para tirar MDC(x,y);
+Divida x por y, se o resto não for zero divida y pelo resto até achar o resto "0";
+Quando achar uma divisão com resto 0 o "y" dessa divisão será o MDC de x e y originais.
 
-int mdc_euclides(int num1, int num2) {
+*/
+
+int MDC(int x, int y)
+{
+    if(y == 0)
+    {
+        return x;
+    }
     
-    if (num2 == 0) return num1;                // funcao recusiva para encontrar o MDC a partir do algoritmo de Euclides 
-                                                    
-    return mdc_euclides(num2, num1 % num2);
+    {
+       return MDC(y, x % y); // O algoritmo de Euclides funciona dividindo sucessivamente o resto da divisão até que o resto seja "0", assim, caindo no caso base.
+    }
+
 }
 
-int calc_mmc(int num1, int num2){
+int main() 
+{
+    int x, y;
     
-    return (num1 * num2) / mdc_euclides(num1,num2); // funcao para encontrar o mmc a partir do mdc (EXPLICACAO NA APRESENTACAO 6 DO SITE DO PIMENTAS)
-}
-
-int main(){
-
-    int numA, numB, mmc, mdc;
-
-    scanf("%d %d",&numA,&numB);
-
-    mdc = mdc_euclides(numA,numB);
-    mmc = calc_mmc(numA,numB);
-
-    printf("O MDC de %d e %d = %d\n",numA,numB,mdc);
-    printf("O MMC de %d e %d = %d\n",numA,numB,mmc);
-
+    scanf("%d %d", &x, &y);
+    
+    printf("MDC(%d,%d) = %d\n", x, y, MDC(x, y)); 
+    
     return 0;
 }
