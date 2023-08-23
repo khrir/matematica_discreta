@@ -2,15 +2,15 @@
 #include <time.h>
 #include <math.h>
 
-int findprimo(int n, int divisor) {
+int findprimo(int n, int divisor){
     if (divisor == 1) return 1;
-    if (n % divisor == 0) return 0;
+    if (n % divisor == 0) return 0;     // funcao recursiva para achar primos
     return findprimo(n, divisor - 1); 
 }
 
 int checkprimo(int n) {
-    if (n < 2) return 0;
-    int maiordiv = sqrt(n);
+    if (n < 2) return 0;            //funcao apra limitar os casos de teste      
+    int maiordiv = sqrt(n);         
     return findprimo(n, maiordiv);
 }
 
@@ -19,8 +19,8 @@ int main() {
     int numero = 2;
 
     while (1) {
-        if (checkprimo(numero)) printf("%d\n", numero);
-
+         if (checkprimo(numero)) printf("%d\n", numero); // loop para delimitar o tempo e rodar a funcao dos primos
+                                                        
         if (time(NULL) - tempoInicio >= 60) break;
 
         numero++;
