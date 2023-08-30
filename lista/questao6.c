@@ -19,11 +19,14 @@ int calcular_mdc_estendido(int a, int b, int *coefS, int *coefT)
 
 int main()
 {
-    int valorA, valorB, coefS, coefT;
+    int valorA, valorB;
+    int coefS, coefT;
 
     printf("Entre com dois valores: ");
     scanf("%d %d", &valorA, &valorB);
 
     int mdc = calcular_mdc_estendido(valorA, valorB, &coefS, &coefT);
     printf("MDC: %d\ncoeficiente s: %d\ncoeficiente t: %d\n", mdc, coefS, coefT);
+    
+    return 0;
 }

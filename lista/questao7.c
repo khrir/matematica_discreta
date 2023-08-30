@@ -1,33 +1,32 @@
 #include <stdio.h>
 
-int calcular_mdc_estendido(int a, int b, int *x, int *y)
+int calcular_mdc_estendido(int a, int modulo, int *coefS, int *coefT)
 {
-    if(b == 0) {
-        *x = 1;
-        *y = 0;
+    if(modulo == 0) {
+        *coefS = 1;
+        *coefT = 0;
         return a;
     }
 
-    int x1, y1;
-    int mdc = calcular_mdc_estendido(b, a % b, &x1, &y1);
+    int s1, t1;
+    int mdc = calcular_mdc_estendido(modulo, a % modulo, &s1, &t1);
 
-    *x = y1;
-    *y = x1 - (a / b) * y1;
+    *coefS = t1;
+    *coefT = s1 - (a / modulo) * t1;
 
     return mdc;
 }
 
 int main()
 {
-    int a, b;
+    int a, modulo;
+    int coefS, coefT;
 
-    printf("Entre com o valor e o modulo\n");
-    scanf("%d %d", &a, &b);
+    printf("Entre com o valor e o modulo: ");
+    scanf("%d %d", &a, &modulo);
 
-    int x, y;
-
-    if (calcular_mdc_estendido(a, b, &x, &y) == 1) {
-        printf("O inverso de %d mod %d é %d\n", a, b, ((x % b + b) % b));
+    if (calcular_mdc_estendido(a, modulo, &coefS, &coefT) == 1) {
+        printf("O inverso de %d mod %d é %d\n", a, modulo, ((coefS % modulo + modulo) % modulo));
     } else {
         printf("Nao sao primos entre si\n");
     }
