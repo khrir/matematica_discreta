@@ -19,13 +19,27 @@ int calcular_mdc_estendido(int a, int modulo, int *coefS, int *coefT)
 
 void determinar_congruencia(int a, int b, int modulo) // a * x = b mod(m)
 {
-    int coefS, coefT;
+    if (modulo == 0) {
+        printf("O módulo não pode ser zero.\n");
+        return;
+    }
 
+    int coefS, coefT;
     int mdc = calcular_mdc_estendido(a, modulo, &coefS, &coefT);
 
     if (b % mdc == 0) {
         int x0 = (coefS * (b / mdc)) % modulo;
-        printf("A solução da congruência %dx ≡ %d mod %d é: %d\n", a, b, modulo, (x0 + modulo) % modulo);
+
+        if (x0 < 0)
+            x0 += modulo; 
+            
+        printf("Solução(s) da congruência %dx ≡ %d mod %d:\n", a, b, modulo);
+
+        int i;
+        for (i = 0; i < mdc; i++) {
+            int solution = (x0 + i * (modulo / mdc)) % modulo;
+            printf("x = %d\n", solution);
+        }
     } else {
         printf("Não há solução para a congruência %dx ≡ %d mod %d.\n", a, b, modulo);
     }
