@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int primo(int n, int divisor) {
+int primo(int n, int divisor)
+{
    
     if (n < 2) return 0;
         
@@ -11,7 +12,8 @@ int primo(int n, int divisor) {
     return primo(n, divisor - 1);
 }
 
-int main(){
+int main()
+{
 
     int num;
 

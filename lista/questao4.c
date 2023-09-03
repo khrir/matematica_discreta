@@ -1,10 +1,11 @@
 #include <stdio.h>
 
-#define MAX_FACTORS 100
+#define maximo_de_fatores 100
 
-int calcular_fatores(int numero, int fatores[]) {
+int calcular_fatores(int numero, int fatores[])
+{
     int fator = 2;
-    int idx = 0;  // Índice para rastrear os fatores armazenados no array
+    int idx = 0;
     while (numero > 1) {
         if (numero % fator == 0) {
             fatores[idx++] = fator;
@@ -16,8 +17,9 @@ int calcular_fatores(int numero, int fatores[]) {
     return idx;
 }
 
-int calcular_mdc(int num1, int num2) {
-    int fatores1[MAX_FACTORS], fatores2[MAX_FACTORS];
+int calcular_mdc(int num1, int num2)
+{
+    int fatores1[maximo_de_fatores], fatores2[maximo_de_fatores];
     
     int num_fatores1 = calcular_fatores(num1, fatores1);
     int num_fatores2 = calcular_fatores(num2, fatores2);
@@ -40,8 +42,9 @@ int calcular_mdc(int num1, int num2) {
     return mdc;
 }
 
-int calcular_mmc(int num1, int num2) {
-    int fatores1[MAX_FACTORS], fatores2[MAX_FACTORS];
+int calcular_mmc(int num1, int num2)
+{
+    int fatores1[maximo_de_fatores], fatores2[maximo_de_fatores];
     
     int num_fatores1 = calcular_fatores(num1, fatores1);
     int num_fatores2 = calcular_fatores(num2, fatores2);
@@ -62,12 +65,13 @@ int calcular_mmc(int num1, int num2) {
     return mmc;
 }
 
-int main() {
+int main()
+{
     int numero1, numero2;
     printf("Digite dois números inteiros: ");
     scanf("%d %d", &numero1, &numero2);
 
-    int fatores1[MAX_FACTORS], fatores2[MAX_FACTORS];
+    int fatores1[maximo_de_fatores], fatores2[maximo_de_fatores];
 
     printf("Fatores de %d: ", numero1);
     int num_fatores1 = calcular_fatores(numero1, fatores1);

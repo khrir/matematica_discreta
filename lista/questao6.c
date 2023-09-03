@@ -17,6 +17,7 @@ int calcular_mdc_estendido(int a, int b, int *coefS, int *coefT)
     return mdc;
 }
 
+
 int main()
 {
     int valorA, valorB;

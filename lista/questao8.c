@@ -1,5 +1,6 @@
 #include <stdio.h>;
 
+
 int calcular_mdc_estendido(int a, int modulo, int *coefS, int *coefT)
 {
     if(modulo == 0) {
@@ -16,6 +17,7 @@ int calcular_mdc_estendido(int a, int modulo, int *coefS, int *coefT)
 
     return mdc;
 }
+
 
 void determinar_congruencia(int a, int b, int modulo) // a * x = b mod(m)
 {
@@ -44,6 +46,7 @@ void determinar_congruencia(int a, int b, int modulo) // a * x = b mod(m)
         printf("Não há solução para a congruência %dx ≡ %d mod %d.\n", a, b, modulo);
     }
 }
+
 
 int main()
 {
