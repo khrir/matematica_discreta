@@ -1,4 +1,4 @@
-#include <stdio.h>;
+#include <stdio.h>
 
 int calcular_mdc_estendido(int a, int b, int *coefS, int *coefT)
 {
